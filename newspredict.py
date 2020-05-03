@@ -13,6 +13,7 @@ PROBLEM STATEMENT:-
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import PassiveAggressiveClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 import itertools
@@ -33,7 +34,7 @@ tfidf_train = vectoriser.fit_transform(x_train)
 
 tfidf_test = vectoriser.transform(x_test)
 
-pac = PassiveAggressiveClassifier(max_iter = 50)
+pac = KNeighborsClassifier(n_neighbors=3)
 
 pac.fit(tfidf_train,y_train)
 
